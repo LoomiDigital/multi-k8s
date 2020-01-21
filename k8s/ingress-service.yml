@@ -15,7 +15,7 @@ spec:
       secretName: loomi-io
   rules:
     - host: loomi.io
-    - http:
+      http:
         paths:
           - path: /?(.*)
             backend:
@@ -26,7 +26,7 @@ spec:
               serviceName: server-cluster-ip-service
               servicePort: 5000
     - host: www.loomi.io
-    - http:
+      http:
         paths:
           - path: /?(.*)
             backend:
