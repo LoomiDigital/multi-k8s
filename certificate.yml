@@ -1,0 +1,20 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: loomi-io-tls
+spec:
+  secretName: loomi-io
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: loomi-io
+  dnsNames:
+    - loomi-io
+    - www.loomi-io
+  acme:
+    config:
+      - http01:
+          ingressClass: ngnix
+        domains:
+          - loomi
+          - www.loomi
