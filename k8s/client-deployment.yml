@@ -15,9 +15,12 @@ spec:
       containers:
         - name: client
           image: barabis/multi-client
-          resources:
+          resources:              
+            # requests:
+            #   cpu: 50m
+            #   memory: 50Mi
             limits:
-              memory: "128Mi"
-              cpu: "50m"
+              memory: "256Mi"
+              cpu: "350m"
           ports:
             - containerPort: 3000
