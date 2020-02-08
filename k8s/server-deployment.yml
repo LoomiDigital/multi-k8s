@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: server-deployment
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       component: server
@@ -17,8 +17,8 @@ spec:
           image: barabis/multi-server
           resources:
             limits:
-              memory: "512Mi"
-              cpu: "500m"
+              memory: "256Mi"
+              cpu: "250m" 
           env:
             - name: REDIS_HOST
               value: redis-cluster-ip-service
